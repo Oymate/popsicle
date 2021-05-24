@@ -294,6 +294,8 @@ impl App {
                                     description.set_text(&desc);
                                     list.hide();
                                 } else {
+                                    ui.content.summary_view.view.topic.set_text(&fl!("flashing-completed-with-errors"));
+
                                     let mut desc = fl!(
                                         "partial-flash",
                                         number = {ntasks - errors.len()},
@@ -317,7 +319,13 @@ impl App {
                                             ..pack_start(&why, true, true, 0);
                                         };
 
-                                        list.insert(&container, -1);
+                                        let row = cascade! {
+                                            gtk::ListBoxRow::new();
+                                            ..set_selectable(false);
+                                            ..add(&container);
+                                        };
+
+                                        list.add(&row);
                                     }
 
                                     list.show_all();

@@ -13,12 +13,12 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - run: docker run --rm -v "$PWD:/popsicle" -w "/popsicle" rust:1.40.0-stretch bash appimage.sh
+    - run: docker run --rm -v "$PWD:/popsicle" -w "/popsicle" rust:1.52.1-buster bash appimage.sh
     - uses: actions/upload-artifact@v2
       with:
         if-no-files-found: error
         name: popsicle-appimage-${{ github.sha }}
-        path: Popsicle_USB_Flasher-*.AppImage
+        path: Popsicle_USB_Flasher-*.AppImage*
 
   upload-to-release:
     if: github.event_name == 'release'

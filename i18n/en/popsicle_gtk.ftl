@@ -24,6 +24,7 @@ flash-view-title = Flashing Devices
 
 # Summary View
 flashing-completed = Flashing Completed
+flashing-completed-with-errors = Flashing Completed with Errors
 flash-again = Flash Again
 
 # Error View
@@ -32,6 +33,7 @@ critical-error = Critical Error Occurred
 # Misc
 cancel = Cancel
 close = Close
+done = Done
 next = Next
 open = Open
 task-finished = Complete
